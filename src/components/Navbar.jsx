@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
+        // container div
         <div className="flex items-center justify-between bg-black text-white p-4 px-10 shadow-sm">
 
         {/* Logo and Title Div */}

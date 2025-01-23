@@ -60,15 +60,15 @@ function Dashboard() {
     );
   };
 
-  const handleOpenAddUserDialog = () => {
+  const handleOpenAddUserDialog = () => { // use to open the editing dialog box
     setShowAddUserDialog(true);
   };
 
-  const handleCloseAddUserDialog = () => {
+  const handleCloseAddUserDialog = () => { // use to close the editing dialog box
     setShowAddUserDialog(false);
   };
 
-  const handleAddUser = async (newUser) => {
+  const handleAddUser = async (newUser) => {  // use to add new user to the exsiting data
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users', {
         method: 'POST',
@@ -92,8 +92,11 @@ function Dashboard() {
 
   return (
     <>
+    {/* navbar */}
       <Navbar />
+      {/* conytainer div */}
       <div className="w-full h-full p-4 px-10">
+      {/* add button of dashboard */}
         <div className="flex justify-between gap-6 md:gap-10 text-sm font-medium mb-10">
           <button
             className="ml-auto mr-12 bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-4 rounded-full cursor-pointer hover:border-purple-600 hover:scale-110 transform transition-transform duration-300 ease-in-out"
@@ -102,6 +105,7 @@ function Dashboard() {
             + Add
           </button>
         </div>
+        {/* user data table */}
         <UserTable
           userData={userData}
           onEdit={handleEdit}
@@ -109,6 +113,7 @@ function Dashboard() {
           />
       </div>
 
+      {/* add user pop-up */}
       {showAddUserDialog && (
         <AddUserDialog
           onClose={handleCloseAddUserDialog}
@@ -116,6 +121,7 @@ function Dashboard() {
         />
       )}
 
+      {/* edit user pop-up */}
       {showDialog && (
         <EditUserDialog
           user={selectedUser}

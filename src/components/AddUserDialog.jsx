@@ -11,7 +11,7 @@ const AddUserDialog = ({ onClose, onAdd }) => {
   });
   const [isClosing, setIsClosing] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { // use to handle the updation
     const { name, value } = e.target;
 
     if (name === 'company') {
@@ -24,7 +24,7 @@ const AddUserDialog = ({ onClose, onAdd }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {  // use to submit the updation
     e.preventDefault();
     onAdd(formData);
     handleClose();
